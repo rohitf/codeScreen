@@ -1,0 +1,53 @@
+<template name="home">
+<main>
+	<header class="center-align" id="landing_header">Welcome to the Interview Assistant</header>
+
+	<div class="container" id="home" >
+	<div class="row">
+		<form class="col s12" id="info">
+			<p class="col l6 offset-l1 white-text" id = "lbl">Candidate Name*</p>
+			<div class="row">
+				<div class="input-field col l6 offset-l1 center-align">
+					<input id="interview_name" class="white-text" type="text">
+					<label for="interview_name">type the name of the candidate here</label>
+				</div>
+			</div>
+			<h6 class="col l6 offset-l1 white-text">Role*</h6>
+			<div class="row">
+				<div class="input-field col l6 offset-l1 center-align">
+					<input id="interview_role" class="white-text" type="text">
+					<label for="interview_role">type the role here</label>
+					<!-- <select name="role" form="info">
+						<option value="java">JAVA</option>
+						<option value="fullstack">Full Stack</option>
+					</select> -->
+				</div>
+			</div>
+
+			<h6 class="col l6 offset-l1 white-text">Interview Date & Time (mm/dd/yyyy, hh:mm [24 hr])</h6>
+			<div class="row">
+				<div class="input-field col l6 offset-l1 center-align">
+					<input id="interview_datetime" class="white-text" type="datetime-local">
+				</div>
+			</div>
+
+			<h6 class="col l6 offset-l1 white-text">Link for Candidate</h6>
+			<div class="row">
+				<div class="link input-field col l6 offset-l1 center-align">
+					<input id="interview_link_candidate" placeholder="Candidate link will appear here" type="text">
+				</div>
+			</div>
+
+			<h6 class="col l6 offset-l1 white-text">Link for Interviewer</h6>
+			<div class="row">
+				<div class="link input-field col l6 offset-l1 center-align">
+					<input id="interview_link_interviewer" placeholder="Interviewer link will appear here" type="text">
+				</div>
+			</div>
+
+			<a class="waves-effect btn-flat blue darken-2 white-text col l4 offset-l4 center-align" id="create_button">Create Interview</a>
+		</form>
+	</div>
+	</div>
+</main>
+</template>

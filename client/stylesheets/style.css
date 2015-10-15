@@ -1,0 +1,229 @@
+ /* CSS declarations go here */
+body
+{
+    font-size: 20px;
+
+    width: 100%;
+    height: 100%;
+}
+
+#highlighted, #editor{
+    left: 50%;
+    position: absolute;
+    z-index: 0;
+    height: 500px;
+    width: 50%;
+    margin-top: -20px;
+}
+html
+{
+    font-weight: lighter !important;
+
+    width: 100%;
+    height: 100%;
+
+    background: black;
+    background-repeat: none;
+    background-size: 100%;
+    background-attachment: fixed;
+    background-position: top center;
+    background-image: url('bg.png');
+}
+header
+{
+    font-weight: normal !important;
+    font-size: .8em;
+    width: 100%;
+    height: 50px;
+    padding: 15px !important;
+    color: white;
+}
+
+body
+{
+font-size: 20px;
+
+}
+row
+{
+    padding-top: 0px !important;
+}
+
+#home
+{
+    height:200px;
+}
+
+#landing_header
+{
+    font-weight: lighter;
+    font-size: 24px;
+    font-family: helvetica;
+    height: auto;
+    padding-top: 2px;
+    padding-bottom: 2px;
+
+    color: white;
+    background: #0070c0;
+}
+
+
+lbl
+{
+    font-weight: lighter;
+    font-size: px;
+    font-family: helvetica;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 10px !important;
+
+    color: white;
+
+}
+
+#areas
+{
+    font-size: 1em;
+
+    margin-bottom: 0;
+}
+#survey
+{
+    background: #d6dce5;
+}
+#home
+{
+    margin-top: 0px;
+}
+#home > .row
+{
+    margin: 0 !important;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+#edit_button
+{
+    display: none;
+}
+input
+{
+    padding-left: 10px !important;
+    margin: 0 !important;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+#create_button,
+#redirect_button
+{
+    margin-bottom: 50px;
+}
+#interview_link_candidate,
+#interview_link_interviewer
+{
+    color: white;
+}
+
+#areas span
+{
+    color: darkred;
+}
+
+#areas #examples
+{
+    font-size: .8em;
+
+    color: inherit;
+}
+.label
+{
+    font-size: .8em;
+
+    width: 100px;
+    z-index: 100;
+    margin-top: 125px;
+    padding: 5px 10px;
+
+    text-align: center;
+
+    color: white;
+    background: rgba(0,0,0,.8);
+}
+#qa
+{
+    position: absolute;
+
+    margin-left: calc(50% - 100px);
+}
+#survey_input
+{
+    width: 90%;
+    margin-left: 5%;
+}
+#code
+{
+    position: absolute;
+
+    margin-left: calc(100% - 100px);
+}
+textarea
+{
+    min-height: 70px;
+    padding: 15px !important;
+}
+.entered
+{
+    font-size: .7em;
+    line-height: 1em;
+
+    min-height: 500px;
+    margin-top: -20px;
+
+    border: none;
+    background: white;
+}
+#missing
+{
+    margin-top: 100px;
+}
+
+#edit
+{
+    resize: none;
+}
+
+#highlighted
+{
+    font-size: .7em;
+
+    background: #ededed;
+}
+
+
+
+#notes,
+#feedback
+{
+    position: absolute;
+
+    margin-top: 640px;
+    margin-left: calc(50% - 100px);
+
+    border-top: 5px solid black;
+}
+#feedback
+{
+    margin-left: calc(100% - 100px);
+}
+
+pre
+{
+    overflow: hidden;
+
+    white-space:      pre-wrap;       /* css-3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space:   -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;
+
+}
