@@ -1,8 +1,0 @@
-DB Connection:
-mongodb://rohit:chocolate@kahana.mongohq.com:10031/sconnect
-
-OR (Modulus)
-mongodb://rohitfalor:rf1406@apollo.modulusmongo.net:27017/wI4pypit
-
-APP URL: 
-http://codescreen-51341.onmodulus.net/
