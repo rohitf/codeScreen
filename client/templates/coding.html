@@ -1,0 +1,84 @@
+<template name="coding">
+<head>
+		<script type="text/javascript">
+
+			//Detect and stop navigation away from page
+			var blur = 0;
+			$(window).blur(function(){
+				blur++;
+				if(window.location.href.indexOf("chocolate") == -1){
+					//alert("Please do not leave this interview tab!");
+					document.title = blur + " DISTRACTIONS"
+				}
+			});
+		</script>
+</head>
+<body>
+
+    
+		{{#if person.name}}
+			<header>
+			<div class="row">
+				<span id="header_name" class="col l4 center-align">Welcome, {{person.name}}</span>
+				<span id="header_role" class="col l4 center-align">Role: {{person.role}}</span>
+				<span id="header_date" class="col l4 center-align">{{person.datetime}}</span>
+			</div>
+			</header>
+			<div class="label" id="qa">Q&A</div>
+			<div class="label" id="code">Code</div>
+			<div class="row" id="survey">
+				<p id="areas" class="col l12"> Add all the areas in which you’ve had <span>extensive hands-on experience</span> in the <span>last 12 months</span>: <span id="examples">Topics – Team Lead, Offshore Coordination, New Feature Development or Maintenance or Small Enhancement; Java/J2EE, Spring MVC/Batch, Hibernate, REST Services, Design Patterns, Data Structure, Unit Testing, SQL:</span>
+ 				</p>
+				<input type="text" id="survey_input" placeholder="Answer here"/>
+
+			</div>
+			<div class="row" id="codes">
+				<textarea id="edit" wrap="hard" class="col l6 entered" placeholder="Q&A here">{{person.qa}}</textarea>
+				{{#if type}}
+					<div id="highlighted" class="col l6">
+						<pre>{{person.code}}</pre>
+					</div>
+				{{else }}
+					<div id="editor" class="col l6 entered">function foo(items) {
+					    var x = "All this is syntax highlighted";
+					    return x;
+					}</div>
+					<script>
+						    var editor = ace.edit("editor");
+						    editor.setTheme("ace/theme/monokai");
+						    editor.getSession().setMode("ace/mode/javascript");
+						    editor.getSession().on('change', function(e) {
+					    
+					    	//Runs when code editor is changed
+						    var code = editor.getValue();
+						    console.log(code);
+						    Session.set('code', code);
+						    
+							var qa = $('#edit').val();
+					        var notes = $('#notestext').val();
+					        var feedback = $('#feedbacktext').val();
+
+        Meteor.call('updateCode', Session.get("code"), Session.get("_id"), qa, notes, feedback, function(error, result){
+            if(error)
+                console.log("hmm");
+        });
+						});
+					</script>
+				{{/if}}
+			</div>
+			{{#if type}}
+			<div class="row" id="admin">
+				<div class="label" id="notes">Notes</div>
+				<div class="label" id="feedback">Feedback</div>
+				<textarea id="notestext" placeholder="Notes go here" wrap="hard" class="col l6 entered">{{person.notes}}</textarea>
+				<textarea id="feedbacktext" placeholder="Feedback here" wrap="hard" class="col l6 entered">{{person.feedback}}</textarea>
+<!-- 				<div id="feedback" class="col l6 entered">
+					<pre>{{getDetails.code}}</pre>
+				</div>
+ -->		</div>
+ 			{{/if}}
+		{{else}}
+			{{> notFound}}
+		{{/if}}
+</body>
+</template>
